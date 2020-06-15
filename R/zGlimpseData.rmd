@@ -1,0 +1,21 @@
+---
+title: "Glipse customer-household-data.csv"
+author: "Nick Spyrison"
+date: "15/06/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Head() and skim()
+```{r , echo=FALSE}
+z <- read.csv2(file = "../data/sgsc-ct_customer-household-data-revised.csv", 
+               header = T, sep = ",", check.names = T, stringsAsFactors = F)
+
+(z <- tibble::as.tibble(z))
+skimr::skim(z)
+```
+
+
