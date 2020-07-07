@@ -7,11 +7,13 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library("dplyr")
+library("lubridate")
 ```
 
 ## Head() and skim()
 ```{r , echo=FALSE}
-z <- read.csv2(file = "../data/sgsc-ct_customer-household-data-revised.csv", 
+z <- read.csv2(file = "../data/sgsc-ct_customer-household-data-revised.csv", ## DimCustomer
                header = T, sep = ",", check.names = T, stringsAsFactors = F)
 
 (z <- tibble::as.tibble(z))
@@ -19,3 +21,4 @@ skimr::skim(z)
 ```
 
 
+?with
